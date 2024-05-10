@@ -5,6 +5,7 @@ export default function Home() {
     <main>
       <Header includeNav={true} />
       <h1>test landingpage</h1>
+      <Header includeNav={false} />
     </main>
   );
 }

@@ -1,1 +1,23 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 75px 0 0 0;
+  background-color: var(--clr-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+figure,
+p {
+  margin: 0;
+}
+
+:root {
+  --clr-accent: #000;
+  --clr-primary: #f9f9f9;
+}
