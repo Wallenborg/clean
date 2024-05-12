@@ -12,8 +12,8 @@ export default function Hero() {
       </h2>
       <div className="small-circle small-circle-place01"></div>
       <div className="big-circle big-circle-place01"></div>
-      {/* <div className="small-circle small-circle-place02"></div>
-      <div className="big-circle big-circle-place02"></div> */}
+      <div className="small-circle small-circle-place02"></div>
+      {/* <div className="big-circle big-circle-place02"></div>  */}
     </section>
   );
 }
