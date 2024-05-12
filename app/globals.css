@@ -21,3 +21,10 @@ p {
   --clr-accent: #000;
   --clr-primary: #f9f9f9;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
