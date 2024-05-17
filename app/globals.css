@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 75px 0 0 0;
+  margin: 0 5px 5px 0;
   background-color: var(--clr-primary);
 }
 
@@ -19,12 +19,18 @@ p {
 
 :root {
   --clr-accent: #000;
+  --clr-accent-2: #4fe78e;
   --clr-primary: #f9f9f9;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-
+  width: 100vw;
+  min-height: 100vh;
   align-items: center;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
