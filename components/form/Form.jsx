@@ -6,6 +6,9 @@ export default function Form() {
   return (
     <>
       <section className="form-container">
+        <div className="bubble">
+          <p className="bubble-text">Hello!</p>
+        </div>
         <div className="form-maincircle-circle">
           <div className="form-maincircle-eyes">
             <span className="form-maincircle-eye"></span>

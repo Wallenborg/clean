@@ -9,8 +9,10 @@ export default function Home() {
     <main className="wrapper no-scroll">
       <Header includeNav={false} />
       <Hero />
-      <Form />
-      <InfoText />
+      <div className="box">
+        <Form />
+        <InfoText />
+      </div>
       <Fotter />
     </main>
   );

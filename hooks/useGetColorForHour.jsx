@@ -22,7 +22,7 @@ function useGetColorForHour(hour, minute) {
     { start: "19:01", end: "20:00", color: "#787878" },
     { start: "20:01", end: "21:00", color: "#717171" },
     { start: "21:01", end: "22:00", color: "#6A6A6A" },
-    { start: "22:01", end: "23:00", color: "#F9F9F9" },
+    { start: "22:01", end: "23:00", color: "#F9F9F9" }, //check all colors
     { start: "23:01", end: "24:00", color: "#000000" },
   ];
 

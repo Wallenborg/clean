@@ -24,6 +24,7 @@ p {
 }
 
 .wrapper {
+  border: var(--clr-accent-2) solid 5px;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -33,4 +34,20 @@ p {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 801px) {
+  .box {
+    margin: 100px 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+  }
 }

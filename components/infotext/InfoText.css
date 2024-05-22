@@ -1,6 +1,6 @@
 .infotext-container {
   width: 90%;
-  height: 400px;
+  max-width: 700px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,5 +8,18 @@
   border-radius: 20px;
   margin-bottom: 50px;
   margin-top: 80px;
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
+}
+
+.infotext-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--clr-accent);
+  margin-bottom: 5px;
+}
+.infotext-green {
+  color: var(--clr-accent-2);
+}
+.infotext-text {
+  margin-top: 10px;
 }
