@@ -40,6 +40,8 @@ const Form = () => {
   const bubbleRef = useRef(null);
 
   useEffect(() => {
+    if (!bubbleRef.current) return;
+
     gsap.fromTo(
       circleRef.current,
       { x: -30, y: 150, opacity: 0, rotate: 0 },
@@ -70,7 +72,7 @@ const Form = () => {
       // onEnterBack: () => bubbleRef.current.classList.add("bubble-visible"),
       // onLeaveBack: () => bubbleRef.current.classList.remove("bubble-visible"),
     });
-  }, []);
+  }, [bubbleRef.current]);
 
   return (
     <section className="form-container" ref={formContainerRef}>
