@@ -8,7 +8,6 @@
 .hero-text {
   padding: 30px 0 0 20px;
   font-size: 3rem;
-  /* font-size: 5rem; */
   position: relative;
   left: -500px;
   z-index: 100;
@@ -27,6 +26,19 @@
   left: var(--left);
   display: var(--display);
 }
+
+/* .circle {
+  background: radial-gradient(circle at 30% 30%, #555, #000);
+  border-radius: 50%;
+  position: absolute;
+  animation: breathe 4s ease-in-out infinite;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.3);
+  top: var(--top);
+  left: var(--left);
+  display: var(--display);
+} */
 
 .circle.small {
   height: 20px;
@@ -78,6 +90,19 @@
     transform: translateX(500px);
   }
 }
+@media (min-width: 601px) and (max-width: 800px) {
+  @keyframes movetext {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(580px);
+    }
+  }
+}
 
 @media (min-width: 801px) {
   @keyframes movetext {
@@ -104,3 +129,19 @@
     transform: scale(1);
   }
 }
+
+/* @keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+      inset -3px -3px 6px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.09);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.35),
+      inset -4px -4px 8px rgba(0, 0, 0, 0.35);
+  }
+} */

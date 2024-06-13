@@ -13,7 +13,7 @@
 }
 
 .button-clean:hover {
-  background-color: #2322222d;
+  background-color: #232222bd;
 }
 
 .button-left-bottom {
@@ -22,8 +22,14 @@
   right: 10px;
 }
 
-.button-center {
+.button-center-top {
   position: absolute;
   top: 20px;
+  left: 38%;
+}
+
+.button-center-bottom {
+  position: absolute;
+  bottom: 20px;
   left: 38%;
 }
