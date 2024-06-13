@@ -51,37 +51,25 @@ const Form = () => {
         duration: 1,
         scrollTrigger: {
           trigger: formContainerRef.current,
-          start: "20% 60%",
-          end: "bottom 60%",
+          start: "top center",
+          end: "bottom center",
           scrub: true,
           markers: false,
         },
       }
     );
 
-    gsap.fromTo(
-      bubbleRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: formContainerRef.current,
-          start: "center center",
-          end: "center 45%",
-          scrub: true,
-          markers: true,
-          onEnter: () =>
-            gsap.to(bubbleRef.current, { opacity: 1, duration: 0.5 }),
-          onLeave: () =>
-            gsap.to(bubbleRef.current, { opacity: 0, duration: 0.5 }),
-          onEnterBack: () =>
-            gsap.to(bubbleRef.current, { opacity: 0, duration: 0.5 }),
-          onLeaveBack: () =>
-            gsap.to(bubbleRef.current, { opacity: 0, duration: 0.5 }),
-        },
-      }
-    );
+    ScrollTrigger.create({
+      trigger: formContainerRef.current,
+      start: "center center",
+      end: "center 30%",
+      scrub: true,
+      markers: false,
+      onEnter: () => bubbleRef.current.classList.add("bubble-visible"),
+      onLeave: () => bubbleRef.current.classList.remove("bubble-visible"),
+      // onEnterBack: () => bubbleRef.current.classList.add("bubble-visible"),
+      // onLeaveBack: () => bubbleRef.current.classList.remove("bubble-visible"),
+    });
   }, []);
 
   return (

@@ -167,7 +167,6 @@
   }
 } */
 
-/* Form.css */
 .form-container {
   position: relative;
   display: flex;
@@ -260,8 +259,7 @@
 
 .bubble {
   position: absolute;
-  opacity: 0;
-  opacity: 0;
+  opacity: 0; /* Använd opacity här */
   z-index: 100;
   top: -40px;
   width: 250px;
@@ -303,4 +301,19 @@
 
 .bubble-text {
   font-size: 2.6rem;
+}
+
+@keyframes bubble-display {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.bubble-visible {
+  animation: bubble-display 2s backwards;
 }
