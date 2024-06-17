@@ -1,4 +1,4 @@
-/* .form-container {
+.form-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 @media (min-width: 801px) {
   .form-container {
-    margin-bottom: 70px;
+    margin-bottom: 120px;
   }
 }
 
@@ -21,6 +21,9 @@
   border: 4px solid var(--clr-accent);
   background-color: var(--clr-primary);
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672);
+}
+.tes {
+  color: #d01313;
 }
 
 .form-maincircle-circle {
@@ -165,155 +168,4 @@
   100% {
     visibility: visible;
   }
-} */
-
-.form-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-}
-
-@media (min-width: 801px) {
-  .form-container {
-    margin-bottom: 70px;
-  }
-}
-
-.form-shape {
-  position: relative;
-  z-index: 1000;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 4px solid var(--clr-accent);
-  background-color: var(--clr-primary);
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672);
-}
-
-.form-maincircle-circle {
-  position: relative;
-  top: 110px;
-  left: 80px;
-  height: 150px;
-  width: 150px;
-  background-color: #fff;
-  border: 4px solid #000;
-  border-radius: 50%;
-  padding: 20px;
-  opacity: 0;
-}
-
-.form-maincircle-eyes {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  transition: all 0.5s;
-}
-
-.form-maincircle-eye {
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-  border: 0.5px solid #fff;
-  border-radius: 25px;
-  animation: blink 6s infinite;
-}
-
-@keyframes blink {
-  0% {
-    height: 20px;
-    width: 20px;
-  }
-  15% {
-    height: 24px;
-    width: 16px;
-  }
-  20% {
-    height: 24px;
-    width: 16px;
-  }
-  60% {
-    height: 24px;
-    width: 16px;
-  }
-  70% {
-    height: 20px;
-    width: 20px;
-  }
-  85% {
-    height: 4px;
-    width: 20px;
-  }
-  90% {
-    height: 4px;
-    width: 20px;
-  }
-  100% {
-    height: 20px;
-    width: 20px;
-  }
-}
-
-.bubble {
-  position: absolute;
-  opacity: 0; /* Använd opacity här */
-  z-index: 100;
-  top: -40px;
-  width: 250px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 56px;
-  border: #000000 solid 4px;
-  transition: all 1s;
-}
-
-.bubble:after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-width: 31px 20px 0;
-  border-color: #ffffff transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
-  bottom: -31px;
-  left: 143px;
-}
-
-.bubble:before {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-width: 34px 23px 0;
-  border-color: #000000 transparent;
-  display: block;
-  width: 0;
-  z-index: 0;
-  bottom: -38px;
-  left: 140px;
-}
-
-.bubble-text {
-  font-size: 2.6rem;
-}
-
-@keyframes bubble-display {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-  }
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-.bubble-visible {
-  animation: bubble-display 2s backwards;
 }

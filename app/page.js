@@ -13,6 +13,7 @@ export default function Home() {
         <Form />
         <InfoText />
       </div>
+
       <Fotter />
     </main>
   );
