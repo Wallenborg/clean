@@ -184,23 +184,22 @@ const DayCircle = () => {
             .attr("class", "custom-circle");
 
           // Add breathing animation
-          circle
-            .transition()
-            .duration(2000)
-            .attr("r", 11.5)
-            .transition()
-            .duration(2000)
-            .attr("r", 10)
-            .ease(d3.easeSinInOut)
-            .on("end", function repeat() {
-              d3.active(this)
-                .transition()
-                .attr("r", 11.5)
-                .transition()
-                .attr("r", 10)
-                .ease(d3.easeSinInOut)
-                .on("end", repeat);
-            });
+          circle.transition();
+          // .duration(2000)
+          // .attr("r", 11.5)
+          // .transition()
+          // .duration(2000)
+          // .attr("r", 10)
+          // .ease(d3.easeSinInOut)
+          // .on("end", function repeat() {
+          //   d3.active(this)
+          //     .transition()
+          //     .attr("r", 11.5)
+          //     .transition()
+          //     .attr("r", 10)
+          //     .ease(d3.easeSinInOut)
+          //     .on("end", repeat);
+          // });
         }, index * 200); // Adjust delay between circles as needed
       });
     };
