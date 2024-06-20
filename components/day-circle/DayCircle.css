@@ -1,11 +1,26 @@
-@keyframes breathe {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.09);
-  }
-  100% {
-    transform: scale(1);
-  }
+.daycircle-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.daycircle-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.year-display {
+  position: fixed;
+  top: 80px;
+  left: 40px;
+  font-size: 2rem;
+  color: var(--clr-accent-2);
+}
+
+.custom-circle {
+  z-index: 3000;
 }

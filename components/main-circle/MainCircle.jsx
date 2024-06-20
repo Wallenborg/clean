@@ -1,14 +1,12 @@
-import "./MainCircle.css";
 import useGetColorForHour from "@/hooks/useGetColorForHour";
+import "./MainCircle.css";
 
 export default function MainCircle() {
-  // Use the hook to get the color
   const color = useGetColorForHour(
     new Date().getHours(),
     new Date().getMinutes()
   );
 
-  // Inline style to set the background color dynamically
   const circleStyle = {
     backgroundColor: color,
   };
