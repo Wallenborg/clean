@@ -8,7 +8,7 @@ import MainCircle from "../main-circle/MainCircle";
 import "./DayCircle.css";
 
 export default function DayCircle() {
-  const startDate = "2023-06-18"; // Starting date for the calculation this is now hard-code will be based on user input
+  const startDate = "2024-03-18"; // Starting date for the calculation this is now hard-code will be based on user input
   const daysPassed = useGetTimeSpan(startDate); // Calculates the number of days passed since the start date
   const { circles, year } = useGenerateCircles(daysPassed); // Generates circles and year based on days passed
   const svgRef = useRef(); // Reference to the SVG element for manipulation with D3.js

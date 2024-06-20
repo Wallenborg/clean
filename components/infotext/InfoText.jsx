@@ -17,9 +17,7 @@ export default function InfoText() {
         through a visually experience. The main feature is a dynamic circle that
         represents a single day. Over the course of 24 hours, this circle
         transitions from white to black, visually marking the passage of time.
-        Each new day adds a black circle, symbolizing your sobriety time. As
-        more circles are generated, they move outside the screen, allowing you
-        to scroll and explore your journey.
+        Each new day adds a black circle, symbolizing your sobriety time.
       </p>
       <p className="infotext-text">
         To use the app, register and then simply log in with your username and
