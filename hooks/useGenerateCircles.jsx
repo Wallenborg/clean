@@ -63,7 +63,7 @@ function useGenerateCircles(daysPassed) {
       const dayNumber = index + 1;
       return {
         id: dayNumber,
-        color: index % 28 === 0 ? "#4fe78e" : "black", // Assign green color every 28th circle
+        color: (index + 1) % 28 === 0 ? "#4fe78e" : "black", // Assign green color every 28th circle
       };
     });
   }, [daysPassed]);
