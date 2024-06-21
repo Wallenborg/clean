@@ -13,7 +13,7 @@
   border: solid 4px var(--clr-accent);
   border-radius: 20px;
   background-color: var(--clr-primary);
-  z-index: 1200;
+  z-index: 5200;
 }
 
 .header-title {

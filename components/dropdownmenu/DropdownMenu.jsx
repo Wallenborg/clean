@@ -8,7 +8,7 @@ export default function DropdownMenu({ startDate }) {
 
   return (
     <div className="dropdown-menu">
-      <p className="dropdown-text">Days Passed: {daysPassed}</p>
+      <p className="dropdown-text">Days Clean: {daysPassed}</p>
       <p className="dropdown-text">Re-start</p>
       <p className="dropdown-text">Add Shortcut</p>
       <Link className="dropdown-link" href="/">
