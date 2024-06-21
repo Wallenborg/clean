@@ -22,7 +22,9 @@
 
 .header-nav {
   position: absolute;
-  right: 10px;
+  top: 5px;
+  right: 20px;
+
   height: 40px;
   width: 40px;
   cursor: pointer;

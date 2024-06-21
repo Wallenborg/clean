@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Afacad } from "next/font/google";
 import { FaCircleUser } from "react-icons/fa6";
 import "./Header.css";
+import DropdownMenu from "../dropdownmenu/DropdownMenu";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -10,6 +11,7 @@ const afacad = Afacad({
 
 export default function Header({ includeNav }) {
   const [opacity, setOpacity] = useState(1);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,13 +25,24 @@ export default function Header({ includeNav }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const startDate = "2022-04-23";
+
   return (
     <header
       style={{ opacity, transition: "opacity 0.2s ease-in-out" }}
       className="header-component"
     >
       <h1 className={`${afacad.className} header-title`}>CLEAN</h1>
-      {includeNav && <FaCircleUser className="header-nav" />}
+      {includeNav && (
+        <div className="header-nav-wrapper">
+          <FaCircleUser className="header-nav" onClick={toggleDropdown} />
+          {dropdownVisible && <DropdownMenu startDate={startDate} />}
+        </div>
+      )}
     </header>
   );
 }
