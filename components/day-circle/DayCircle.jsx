@@ -232,7 +232,7 @@ import MainCircle from "../main-circle/MainCircle";
 import "./DayCircle.css";
 
 const DayCircle = () => {
-  const startDate = "2024-02-20"; // Starting date for the calculation this is now hard-coded will be based on user input
+  const startDate = "2024-04-23"; // Starting date for the calculation this is now hard-coded will be based on user input
   const daysPassed = useGetTimeSpan(startDate); // Calculates the number of days passed since the start date
   const { circles, year } = useGenerateCircles(daysPassed); // Generates circles and year based on days passed
   const svgRef = useRef(); // Reference to the SVG element for manipulation with D3.js
@@ -244,7 +244,7 @@ const DayCircle = () => {
     const width = window.innerWidth; // Width of the window
     const height = window.innerHeight; // Height of the window
     const mainCircleRadius = 38; // Radius of the main circle
-
+    // this is to be abel to have the small onn top of large
     const largeCirclesGroup = svg.append("g").attr("id", "large-circles"); // Group for large circles
     const smallCirclesGroup = svg.append("g").attr("id", "small-circles"); // Group for small circles
 
@@ -257,20 +257,18 @@ const DayCircle = () => {
       let y = height / 2 + distance * Math.sin(angle); // Calculate y-coordinate
 
       // Ensure circles stay within screen boundaries
-      x = Math.max(10, Math.min(x, width - 10));
-      y = Math.max(10, Math.min(y, height - 10));
+      x = Math.max(10, Math.min(x, width - 20));
 
       return { x, y };
     };
 
-    // Function to check for overlapping circles
+    // Function to check for overlapping circles dont work super well
     const isOverlapping = (newCircle, existingCircles) => {
       for (const circle of existingCircles) {
         const dx = newCircle.x - circle.x;
         const dy = newCircle.y - circle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < 15) {
-          // 15 is the minimum distance to consider non-overlapping
           return true;
         }
       }
@@ -279,7 +277,7 @@ const DayCircle = () => {
 
     const existingCircles = []; // Array to store existing circles
 
-    // Function to animate circles sequentially
+    // Function to render circles one by one
     const animateCirclesSequentially = (circlesData) => {
       circlesData.forEach((circleData, index) => {
         setTimeout(() => {
@@ -300,12 +298,12 @@ const DayCircle = () => {
             .append("circle")
             .attr("cx", position.x)
             .attr("cy", position.y)
-            .attr("r", circleData.size === "large" ? 40 : 10)
+            .attr("r", circleData.size === "large" ? 40 : 10) // every 28 is large
             .attr("fill", "black")
             .attr("stroke", "#f9f9f9") // Adds a border to the circle
             .attr("stroke-width", 1) // Sets the border width
             .attr("class", "custom-circle");
-        }, index * 200); // Adjust delay between circles as needed
+        }, index * 200); // time for render circles one by one
       });
     };
 
