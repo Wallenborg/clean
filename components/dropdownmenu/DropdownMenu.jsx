@@ -1,7 +1,7 @@
 import React from "react";
 import useGetTimeSpan from "@/hooks/useGetTimeSpan";
 import Link from "next/link";
-import "./DropdownMenu.css";
+import "./Dropdown.css";
 
 export default function DropdownMenu({ startDate }) {
   const daysPassed = useGetTimeSpan(startDate);
