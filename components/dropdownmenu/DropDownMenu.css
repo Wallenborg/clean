@@ -13,7 +13,7 @@
 
 .dropdown-text {
   padding-top: 20px;
-  border-bottom: 2px solid chartreuse;
+  border-bottom: 2px solid var(--clr-accent-2);
   width: fit-content;
 }
 
