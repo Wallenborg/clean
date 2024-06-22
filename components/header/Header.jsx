@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Afacad } from "next/font/google";
 import { FaCircleUser } from "react-icons/fa6";
+import { IoMdCloseCircle } from "react-icons/io";
 import "./Header.css";
 import DropdownMenu from "../dropdownmenu/DropdownMenu";
 
@@ -39,7 +40,11 @@ export default function Header({ includeNav }) {
       <h1 className={`${afacad.className} header-title`}>CLEAN</h1>
       {includeNav && (
         <div className="header-nav-wrapper">
-          <FaCircleUser className="header-nav" onClick={toggleDropdown} />
+          {dropdownVisible ? (
+            <IoMdCloseCircle className="header-nav" onClick={toggleDropdown} />
+          ) : (
+            <FaCircleUser className="header-nav" onClick={toggleDropdown} />
+          )}
           {dropdownVisible && <DropdownMenu startDate={startDate} />}
         </div>
       )}
