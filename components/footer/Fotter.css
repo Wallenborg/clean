@@ -8,7 +8,7 @@
   align-items: center;
   /* margin-bottom: 15px; */
   /* border: 2px solid var(--clr-accent-2); */
-  border-top: solid 1px var(--clr-accent);
+  border-top: solid 0.5px var(--clr-accent);
   background-color: var(--clr-bg-1);
   padding: 20px 10px;
   color: var(--clr-text);
