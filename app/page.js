@@ -6,7 +6,7 @@ import Fotter from "@/components/footer/Fotter";
 
 export default function Home() {
   return (
-    <main className="wrapper no-scroll">
+    <main className="wrapper">
       <Header includeNav={false} />
       <Hero />
       <div className="box">

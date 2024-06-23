@@ -30,7 +30,7 @@ p {
 }
 
 .wrapper {
-  border: var(--clr-accent-2) solid 5px;
+  /* border: var(--clr-accent-2) solid 5px; */
   display: flex;
   flex-direction: column;
   width: 100vw;
