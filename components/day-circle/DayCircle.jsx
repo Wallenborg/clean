@@ -226,13 +226,14 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import { useStartDate } from "@/context/StartDateContext";
 import useGetTimeSpan from "@/hooks/useGetTimeSpan";
 import useGenerateCircles from "@/hooks/useGenerateCircles";
 import MainCircle from "../main-circle/MainCircle";
 import "./DayCircle.css";
 
 const DayCircle = () => {
-  const startDate = "2024-04-23"; // Starting date for the calculation this is now hard-coded will be based on user input 2022-04-23
+  const startDate = useStartDate(); // Starting date for the calculation this is now hard-coded will be based on user input
   const daysPassed = useGetTimeSpan(startDate); // Calculates the number of days passed since the start date
   const { circles, year } = useGenerateCircles(daysPassed); // Generates circles and year based on days passed
   const svgRef = useRef(); // Reference to the SVG element for manipulation with D3.js
