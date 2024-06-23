@@ -19,12 +19,10 @@ export default function SignupPage() {
           "To get started, simply register with your chosen username, password, and select your sobriety start date. Your information is securely stored and kept private. We only save your registration details to maintain the confidentiality of your data.",
           "Track your clean time visually and stay motivated with CLEAN. Whether you're starting fresh or continuing your progress, our app offers a clear visualization of your accomplishments, helping you stay focused on your goals.",
         ]}
-        showButton={false}
-        buttonText="Sign Up"
+        showButton={true}
+        buttonText="Back"
+        buttonHref="/"
       />
-      <Link href="/">
-        <Button text="BACK" className="button-center-bottom-2" />
-      </Link>
       <Fotter />
     </div>
   );

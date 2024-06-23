@@ -22,6 +22,7 @@ export default function Home() {
           ]}
           showButton={true}
           buttonText="Sign Up"
+          buttonHref="/sign-up"
         />
       </div>
 

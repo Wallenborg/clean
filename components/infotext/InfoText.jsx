@@ -43,6 +43,7 @@ export default function InfoText({
   text,
   showButton,
   buttonText,
+  buttonHref,
 }) {
   return (
     <section className="infotext-container" style={style}>
@@ -60,11 +61,8 @@ export default function InfoText({
           </p>
         ))}
       {showButton && (
-        <Link href="/sign-up">
-          <Button
-            text={buttonText || "Sign-up"}
-            className="button-left-bottom"
-          />
+        <Link href={buttonHref}>
+          <Button text={buttonText} className="button-left-bottom" />
         </Link>
       )}
     </section>
