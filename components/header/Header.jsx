@@ -41,7 +41,11 @@ export default function Header({ includeNav }) {
       {includeNav && (
         <div className="header-nav-wrapper">
           {dropdownVisible ? (
-            <IoMdCloseCircle className="header-nav" onClick={toggleDropdown} />
+            <IoMdCloseCircle
+              style={{ color: "var(--clr-accent-2)" }}
+              className="header-nav"
+              onClick={toggleDropdown}
+            />
           ) : (
             <FaCircleUser className="header-nav" onClick={toggleDropdown} />
           )}
