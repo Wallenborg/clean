@@ -18,9 +18,15 @@ p {
 }
 
 :root {
-  --clr-accent: #000;
+  /* --clr-accent: #000;
   --clr-accent-2: #4fe78e;
-  --clr-primary: #f9f9f9;
+  --clr-primary: #f9f9f9; */
+
+  --clr-accent: #f9f9f9;
+  --clr-accent-2: #4fe78e;
+  --clr-primary: #18191a;
+  --clr-text: #f9f9f9;
+  --clr-bg-1: #242426;
 }
 
 .wrapper {

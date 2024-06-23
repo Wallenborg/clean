@@ -299,8 +299,8 @@ const DayCircle = () => {
             .attr("cx", position.x)
             .attr("cy", position.y)
             .attr("r", circleData.size === "large" ? 40 : 10) // every 28 is large
-            .attr("fill", "black")
-            .attr("stroke", "#f9f9f9") // Adds a border to the circle
+            .attr("fill", "#f9f9f9")
+            .attr("stroke", "#18191a") // Adds a border to the circle
             .attr("stroke-width", 1) // Sets the border width
             .attr("class", "custom-circle");
         }, index * 200); // time for render circles one by one

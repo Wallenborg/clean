@@ -17,7 +17,7 @@
 }
 
 .circle {
-  background-color: #000;
+  background-color: var(--clr-accent);
   border-radius: 50%;
   position: absolute;
   animation: breathe 4s ease-in-out infinite;

@@ -2,9 +2,9 @@
   position: absolute;
   top: 100%;
   right: 3%;
-  border: solid 4px var(--clr-accent);
+  border: solid 2px var(--clr-accent-);
   border-radius: 0 0 20px 20px;
-  background-color: var(--clr-primary);
+  background-color: var(--clr-bg-1);
   padding: 10px 20px;
   opacity: 0.8;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
@@ -13,6 +13,7 @@
 .dropdown-text {
   padding-top: 20px;
   border-bottom: 2px solid var(--clr-accent-2);
+  color: var(--clr-text);
   width: fit-content;
   cursor: pointer;
 }
