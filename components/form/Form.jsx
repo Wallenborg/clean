@@ -54,7 +54,7 @@ export default function Form() {
           start: "top 70%",
           end: "bottom center",
           scrub: true,
-          markers: true,
+          markers: false,
         },
       }
     );
