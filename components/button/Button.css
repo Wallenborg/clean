@@ -5,7 +5,7 @@
   padding: 2px 10px;
   border-radius: 20px;
   color: var(--clr-text);
-  border: solid 2px var(--clr-accent);
+  border: solid 0.5px var(--clr-accent);
   background-color: var(--clr-bg-1);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
