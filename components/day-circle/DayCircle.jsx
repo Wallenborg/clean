@@ -313,7 +313,7 @@ const DayCircle = () => {
   return (
     <div className="daycircle-container">
       <svg ref={svgRef} width="100%" height="100%"></svg>
-      <MainCircle />
+      <MainCircle startDate={startDate} />
       {year >= 1 ? (
         <div className="year-display">
           {year} {year === 1 ? "Year" : "Years"}
