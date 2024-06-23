@@ -21,7 +21,7 @@
   border-radius: 50%;
   position: absolute;
   animation: breathe 4s ease-in-out infinite;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672);
+  /* box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672); */
   top: var(--top);
   left: var(--left);
   display: var(--display);
