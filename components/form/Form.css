@@ -33,7 +33,7 @@
   border: 4px solid #000;
   border-radius: 50%;
   padding: 20px;
-  animation: movecircle 0.5s 3s 1 forwards;
+  /* animation: movecircle 0.5s 3s 1 forwards; */
   opacity: 0;
 }
 
@@ -88,7 +88,7 @@
   }
 }
 
-@keyframes movecircle {
+/* @keyframes movecircle {
   0% {
     transform: translateX(100px);
     transform: translateY(50px);
@@ -105,9 +105,11 @@
 
     opacity: 1;
   }
-}
+} */
 
-.bubble {
+/* BUBBLE NOT IN USE RIGHT NOW */
+
+/* .bubble {
   position: absolute;
   visibility: hidden;
   z-index: 100;
@@ -165,4 +167,4 @@
   100% {
     visibility: visible;
   }
-}
+} */
