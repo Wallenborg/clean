@@ -232,7 +232,7 @@ import MainCircle from "../main-circle/MainCircle";
 import "./DayCircle.css";
 
 const DayCircle = () => {
-  const startDate = "2022-04-23"; // Starting date for the calculation this is now hard-coded will be based on user input
+  const startDate = "2024-04-23"; // Starting date for the calculation this is now hard-coded will be based on user input 2022-04-23
   const daysPassed = useGetTimeSpan(startDate); // Calculates the number of days passed since the start date
   const { circles, year } = useGenerateCircles(daysPassed); // Generates circles and year based on days passed
   const svgRef = useRef(); // Reference to the SVG element for manipulation with D3.js
@@ -314,7 +314,11 @@ const DayCircle = () => {
     <div className="daycircle-container">
       <svg ref={svgRef} width="100%" height="100%"></svg>
       <MainCircle />
-      {year >= 1 && <div className="year-display">Year: {year}</div>}
+      {year >= 1 ? (
+        <div className="year-display">
+          {year} {year === 1 ? "Year" : "Years"}
+        </div>
+      ) : null}
     </div>
   );
 };

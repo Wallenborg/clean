@@ -69,6 +69,17 @@ export default function Form() {
         </div>
       </div>
       <div className="form-shape">
+        <form>
+          <label for="fname">User Name:</label>
+          <br />
+          <input type="text" id="fname" name="fname" value="dont work" />
+          <br />
+          <label for="lname">Password:</label>
+          <br />
+          <input type="text" id="lname" name="lname" value="just press login" />
+          <br />
+          <br />
+        </form>
         <Link href="/clean">
           <Button text="Login" className="button-center-bottom" />
         </Link>
