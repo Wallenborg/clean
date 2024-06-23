@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Afacad } from "next/font/google";
 // import { FaCircleUser } from "react-icons/fa6"; <FaCircleUser />
 import { CgMenuRound } from "react-icons/cg";
-import { IoMdCloseCircle } from "react-icons/io";
+import { IoMdCloseCircle, IoMdCloseCircleOutline } from "react-icons/io"; //<IoMdCloseCircle />
 import "./Header.css";
 import DropdownMenu from "../dropdownmenu/DropdownMenu";
 
@@ -42,7 +42,7 @@ export default function Header({ includeNav }) {
       {includeNav && (
         <div className="header-nav-wrapper">
           {dropdownVisible ? (
-            <IoMdCloseCircle
+            <IoMdCloseCircleOutline
               // style={{ color: "var(--clr-accent-2)" }}
               className="header-nav"
               onClick={toggleDropdown}
