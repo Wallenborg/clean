@@ -13,7 +13,7 @@
   /* border: solid 2px var(--clr-accent-2); */
   border-bottom: solid 0.5px var(--clr-accent);
   /* border-radius: 20px; */
-  background-color: var(--clr-bg-1);
+  background-color: var(--clr-primary);
   z-index: 4200;
 }
 

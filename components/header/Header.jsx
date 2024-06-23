@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Afacad } from "next/font/google";
-import { FaCircleUser } from "react-icons/fa6";
+// import { FaCircleUser } from "react-icons/fa6"; <FaCircleUser />
+import { CgMenuRound } from "react-icons/cg";
 import { IoMdCloseCircle } from "react-icons/io";
 import "./Header.css";
 import DropdownMenu from "../dropdownmenu/DropdownMenu";
@@ -42,12 +43,12 @@ export default function Header({ includeNav }) {
         <div className="header-nav-wrapper">
           {dropdownVisible ? (
             <IoMdCloseCircle
-              style={{ color: "var(--clr-accent-2)" }}
+              // style={{ color: "var(--clr-accent-2)" }}
               className="header-nav"
               onClick={toggleDropdown}
             />
           ) : (
-            <FaCircleUser className="header-nav" onClick={toggleDropdown} />
+            <CgMenuRound className="header-nav" onClick={toggleDropdown} />
           )}
           {dropdownVisible && <DropdownMenu startDate={startDate} />}
         </div>
