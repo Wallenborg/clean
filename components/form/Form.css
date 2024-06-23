@@ -172,3 +172,14 @@
     visibility: visible;
   }
 } */
+
+/* test for forms */
+.label-form {
+  color: var(--clr-text);
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
