@@ -21,6 +21,20 @@ export default function SignupPage() {
         buttonText="Back"
         buttonHref="/"
       />
+      <InfoText
+        style={{ marginTop: "10px" }}
+        title="Sign Up"
+        subtitle="Placeholder"
+        text={[
+          " Here the user will add user name, password and start date - have no backend yet work in progress ",
+          "User name",
+          "Password",
+          "Start date",
+        ]}
+        showButton={true}
+        buttonText="Sign-up"
+        buttonHref="/clean"
+      />
 
       <InfoText
         style={{ marginTop: "10px" }}
