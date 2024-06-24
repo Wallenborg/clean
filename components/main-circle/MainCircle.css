@@ -94,8 +94,11 @@
   bottom: 50px;
   left: 50%;
   font-size: 3rem;
+  width: 380px;
+  opacity: 0.9;
   text-align: center;
+  background-color: var(--clr-primary);
   transform: translateX(-50%);
-  width: 100vw;
+  border-radius: 20px;
   color: var(--clr-accent-2);
 }
