@@ -36,7 +36,7 @@ function useGetColorForHour(hour, minute) {
     }
   }
 
-  return "#FFFFFF"; // Standardfärg
+  return "#FFFFFF"; // defult color
 }
 
 export default useGetColorForHour;

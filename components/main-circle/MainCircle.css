@@ -99,9 +99,3 @@
   width: 100vw;
   color: var(--clr-accent-2);
 }
-
-/* @media (min-width: 601px) and (max-width: 800px) {
-  .days-passed-text {
-    font-size: ;
-  }
-} */

@@ -6,7 +6,7 @@ import "./Dropdown.css";
 export default function DropdownMenu({ startDate }) {
   const daysPassed = useGetTimeSpan(startDate);
   const weeksPassed = Math.floor(daysPassed / 7);
-  // const hoursPassed = daysPassed * 24;
+  // const hoursPassed = daysPassed * 24; this need new logic to work, maybe rewrite useGetTimeSpan check later
 
   return (
     <div className="dropdown-menu">
