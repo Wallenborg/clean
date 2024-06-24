@@ -2,8 +2,6 @@
 import Header from "@/components/header/Header";
 import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
-import Button from "@/components/button/Button";
-import Link from "next/link";
 
 export default function SignupPage() {
   return (
@@ -23,35 +21,35 @@ export default function SignupPage() {
         buttonText="Back"
         buttonHref="/"
       />
+
       <InfoText
-        style={{ marginTop: "20px" }}
+        style={{ marginTop: "10px" }}
+        title="Privacy Policy"
+        subtitle="Your Data Protection Rights"
+        text={[
+          "We are committed to protecting your personal data and respecting your privacy. Here's how we handle your data in compliance with GDPR:",
+          "1. **Data Collection** - We only collect your username, password, and start date. This information is necessary for the app's functionality.",
+          "2. **User Consent** - By using our app, you consent to the collection and processing of your data.",
+          "3. **Data Security** - We implement strong security measures to protect your data from unauthorized access or breaches.",
+          "4. **Right to Access and Erasure** - You have the right to access your data and request its deletion at any time.",
+        ]}
+        showButton={false}
+        buttonText=""
+        buttonHref="/"
+      />
+      <InfoText
+        style={{ marginTop: "10px" }}
         title="Progressive Web App"
         subtitle="Enhance Your User Experience"
         text={[
           "A Progressive Web App (PWA) leverages modern web technologies to provide an app-like experience directly from the web. By installing a PWA on your mobile device, it can operate and appear similar to a native app.",
-          "PWAs offer functionality and faster load times, enhancing the overall user experience. A app-like experience,  ensuring you have quick access to thecontent anytime, anywhere.",
+          "PWAs offer functionality and faster load times, enhancing the overall user experience, app-like experience. Ensuring you have quick access to thecontent anytime, anywhere.",
           "To install, simply visit our website on your mobile device, and follow the prompts to add the app to your home screen. There is no need to visit an app store.",
         ]}
         showButton={true}
         buttonText="Install"
         buttonHref="/"
       />
-      <InfoText
-        style={{ marginTop: "20px" }}
-        title="Privacy Policy"
-        subtitle="Your Data Protection Rights"
-        text={[
-          "We are committed to protecting your personal data and respecting your privacy. Here's how we handle your data in compliance with GDPR:",
-          "1. **Data Collection**: We only collect your username, password, and sobriety start date. This information is necessary for the app's functionality.",
-          "2. **User Consent**: By using our app, you consent to the collection and processing of your data as described in this policy.",
-          "3. **Data Security**: We implement strong security measures to protect your data from unauthorized access or breaches.",
-          "4. **Right to Access and Erasure**: You have the right to access your data and request its deletion at any time.",
-        ]}
-        showButton={false}
-        buttonText=""
-        buttonHref="/"
-      />
-
       <Fotter />
     </div>
   );
