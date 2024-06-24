@@ -25,7 +25,6 @@ export default function Home() {
           buttonHref="/sign-up"
         />
       </div>
-
       <Fotter />
     </main>
   );
