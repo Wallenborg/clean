@@ -14,7 +14,6 @@ export default function DropdownMenu({ startDate }) {
       <p className="dropdown-text">Weeks Clean: {weeksPassed}</p>
       {/* <p className="dropdown-text">Hours Clean: {hoursPassed}</p> */}
       <p className="dropdown-text">Re-start</p>
-      <p className="dropdown-text">Add Shortcut</p>
       <Link className="dropdown-link" href="/">
         <p className="dropdown-text">Logout</p>
       </Link>
