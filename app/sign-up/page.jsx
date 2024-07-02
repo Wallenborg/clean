@@ -35,6 +35,27 @@ export default function SignupPage() {
         buttonText="Sign-up"
         buttonHref="/clean"
       />
+      <InfoText
+        style={{ marginTop: "10px" }}
+        title="Progressive Web App"
+        subtitle="Enhance Your User Experience"
+        text={[
+          "A Progressive Web App (PWA) leverages modern web technologies to provide an app-like experience directly from the web. By installing a PWA on your mobile device, it can operate and appear similar to a app.",
+          "Installation Instructions - How to Install the PWA",
+          "**For Android Users**:",
+          "1. Open the browser menu (three dots in the top-right corner).",
+          "2. Select 'Add to Home screen'.",
+          "3. Confirm the installation.",
+          "",
+          "**For iOS Users (Safari)**:",
+          "1. Open the Share menu (the square with an arrow pointing up).",
+          "2. Select 'Add to Home Screen'.",
+          "3. Confirm by tapping 'Add'.",
+        ]}
+        showButton={false}
+        buttonText=""
+        buttonHref="/"
+      />
 
       <InfoText
         style={{ marginTop: "10px" }}
@@ -51,19 +72,7 @@ export default function SignupPage() {
         buttonText=""
         buttonHref="/"
       />
-      <InfoText
-        style={{ marginTop: "10px" }}
-        title="Progressive Web App"
-        subtitle="Enhance Your User Experience"
-        text={[
-          "A Progressive Web App (PWA) leverages modern web technologies to provide an app-like experience directly from the web. By installing a PWA on your mobile device, it can operate and appear similar to a native app.",
-          "PWAs offer functionality and faster load times, enhancing the overall user experience, app-like experience. Ensuring you have quick access to thecontent anytime, anywhere.",
-          "To install, simply visit our website on your mobile device, and follow the prompts to add the app to your home screen. There is no need to visit an app store.",
-        ]}
-        showButton={true}
-        buttonText="Install"
-        buttonHref="/"
-      />
+
       <Fotter />
     </div>
   );

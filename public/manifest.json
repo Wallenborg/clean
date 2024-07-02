@@ -1,0 +1,21 @@
+{
+  "name": "Clean",
+  "short_name": "Clean",
+  "description": "CLEAN is an innovative app designed to help you track your sobriety time through a visually experience.",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "display": "standalone",
+  "start_url": "https://clean-test.netlify.app/",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
