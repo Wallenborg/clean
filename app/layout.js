@@ -8,12 +8,18 @@ const roboto = Roboto({
 
 export const metadata = {
   title: "Clean",
-  description: "text will come",
+  description:
+    "CLEAN is an innovative app designed to help you track your sobriety time through a visually experience.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192" />
+        <link rel="icon" href="/icons/icon-512x512.png" sizes="512x512" />
+      </head>
       <body className={roboto.className}>{children}</body>
     </html>
   );
