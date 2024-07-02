@@ -16,7 +16,7 @@ export default function InfoText({
       <h2 className="infotext-subtitle">
         {title && (
           <>
-            {title}: <span className="infotext-green">{subtitle}</span>
+            {title} <span className="infotext-green">{subtitle}</span>
           </>
         )}
       </h2>

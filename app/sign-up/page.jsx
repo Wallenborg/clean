@@ -9,8 +9,8 @@ export default function SignupPage() {
       <Header includeNav={false} />
       <InfoText
         style={{ marginTop: "120px" }}
-        title="Sign Up"
-        subtitle="Start Your Sobriety Journey"
+        title="Start"
+        subtitle="Your Sobriety Journey"
         text={[
           "Sign up is quick and easy with CLEAN. Begin tracking your sobriety journey with our intuitive app interface. Each day is represented by a small circle, and every four weeks is marked by a large circle.",
           "In the menu, you can monitor your progress and optionally restart your journey whenever needed.",
@@ -23,13 +23,13 @@ export default function SignupPage() {
       />
       <InfoText
         style={{ marginTop: "10px" }}
-        title="Sign Up"
+        title="Sign Up:"
         subtitle="Placeholder"
         text={[
           " Here the user will add user name, password and start date - have no backend yet work in progress ",
           "User name",
           "Password",
-          "Start date",
+          "Start date 2024-01-23 hardcoded test date",
         ]}
         showButton={true}
         buttonText="Sign-up"
@@ -37,11 +37,11 @@ export default function SignupPage() {
       />
       <InfoText
         style={{ marginTop: "10px" }}
-        title="Progressive Web App"
+        title="PWA:"
         subtitle="Enhance Your User Experience"
         text={[
           "A Progressive Web App (PWA) leverages modern web technologies to provide an app-like experience directly from the web. By installing a PWA on your mobile device, it can operate and appear similar to a app.",
-          "Installation Instructions - How to Install the PWA",
+          "How to Install the PWA",
           "**For Android Users**:",
           "1. Open the browser menu (three dots in the top-right corner).",
           "2. Select 'Add to Home screen'.",
