@@ -1,10 +1,36 @@
+"use client";
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
 import Form from "@/components/form/Form";
 import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
+import Loader from "@/components/loader/Loader";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleDOMContentLoaded = () => {
+      setLoading(false);
+    };
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    ) {
+      setLoading(false);
+    } else {
+      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    }
+    return () => {
+      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    };
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <main className="wrapper no-scroll">
       <Header includeNav={false} />
