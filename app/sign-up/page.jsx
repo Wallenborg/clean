@@ -2,10 +2,12 @@
 import Header from "@/components/header/Header";
 import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
+import RandomCirclesBackground from "@/components/random-circles-background/RandomCirclesBackground";
 
 export default function SignupPage() {
   return (
     <div className="wrapper">
+      <RandomCirclesBackground />
       <Header includeNav={false} />
       <InfoText
         style={{ marginTop: "120px" }}
