@@ -6,6 +6,7 @@ import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
 import Loader from "@/components/loader/Loader";
 import React, { useState, useEffect } from "react";
+import FormContainer from "@/components/form-container /FormContainer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -36,7 +37,8 @@ export default function Home() {
       <Header includeNav={false} />
       <Hero />
       <div className="box">
-        <Form />
+        {/* <Form /> */}
+        <FormContainer />
         <InfoText
           style={{ marginTop: "80px" }}
           title="CLEAN"

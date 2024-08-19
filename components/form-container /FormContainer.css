@@ -1,0 +1,13 @@
+.form-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+@media (min-width: 801px) {
+  .form-container {
+    margin-bottom: 120px;
+  }
+}

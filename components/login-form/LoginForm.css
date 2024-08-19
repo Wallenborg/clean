@@ -1,0 +1,28 @@
+.form-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+@media (min-width: 801px) {
+  .form-container {
+    margin-bottom: 120px;
+  }
+}
+
+.form-shape {
+  position: relative;
+  z-index: 1000;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  /* border: 2px solid var(--clr-accent-2); */
+  background-color: var(--clr-bg-1);
+  /* box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.672); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
