@@ -37,6 +37,7 @@ export default function SignupPage() {
         buttonText="Sign-up"
         buttonHref="/clean"
       />
+
       <InfoText
         style={{ marginTop: "10px" }}
         title="PWA:"

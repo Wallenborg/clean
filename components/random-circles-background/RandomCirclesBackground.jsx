@@ -55,12 +55,12 @@ export default function RandomCirclesBackground() {
     const updateCircleCount = () => {
       if (window.matchMedia("(max-width: 768px)").matches) {
         // Mobil
-        setSmallCircleCount(10);
-        setLargeCircleCount(4);
+        setSmallCircleCount(0);
+        setLargeCircleCount(0);
       } else {
         // Laptop plus
         setSmallCircleCount(30);
-        setLargeCircleCount(5);
+        setLargeCircleCount(4);
       }
     };
 

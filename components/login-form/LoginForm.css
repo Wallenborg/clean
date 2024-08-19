@@ -26,3 +26,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.label-form {
+  color: var(--clr-text);
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
