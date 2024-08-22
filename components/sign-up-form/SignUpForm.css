@@ -28,7 +28,6 @@
   position: absolute;
   padding: 5px;
   top: -33px;
-  z-index: 2000;
   background-color: var(--clr-bg-1);
   color: var(--clr-accent-2);
 }

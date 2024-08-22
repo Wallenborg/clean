@@ -23,13 +23,13 @@ export default function LoginForm() {
         </label>
         <input
           type="text"
-          id="usernam"
+          id="username"
           {...register("usernam", {
             required: "All fields must be completed.",
           })}
         />
-        {errors.fname && (
-          <p className="error-message">{errors.usernam.message}</p>
+        {errors.username && (
+          <p className="error-message">{errors.username.message}</p>
         )}
 
         <label className="label-form" htmlFor="password">
@@ -42,7 +42,7 @@ export default function LoginForm() {
             required: "All fields must be completed.",
           })}
         />
-        {errors.lname && (
+        {errors.password && (
           <p className="error-message">{errors.password.message}</p>
         )}
 
