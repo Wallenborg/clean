@@ -11,7 +11,7 @@ export default function ProfileContainer({ onClose }) {
     <section className="profile-container">
       <IoMdCloseCircleOutline className="profile-close" onClick={onClose} />
       <p className="profile-text big">username</p>
-      <p className="profile-text">Been Clean Since</p>
+      <p className="profile-text">Clean Since</p>
       <p className="profile-text big">{startDate}</p>
       <Button text="Re-start" className="button-left-bottom" />
     </section>
