@@ -1,7 +1,7 @@
 .profile-container {
   position: absolute;
   z-index: 5000;
-  top: 5px;
+  top: 2px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -36,4 +36,10 @@
   height: 40px;
   width: 40px;
   cursor: pointer;
+}
+
+.user-icon {
+  color: var(--clr-accent);
+  height: 65px;
+  width: 65px;
 }
