@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-import Link from "next/link";
+
 import Button from "../button/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -72,9 +72,6 @@ export default function SignUpForm() {
 
         <Button text="Sign Up" className="button-center-bottom" />
       </form>
-      <Link href="/clean">
-        <Button text="Sign up" className="button-center-bottom" />
-      </Link>
     </div>
   );
 }

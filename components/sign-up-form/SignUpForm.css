@@ -9,7 +9,7 @@
   display: flex;
   padding-top: 50px;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 50px;
 }
@@ -26,7 +26,9 @@
 
 .error-message {
   position: absolute;
-  top: -20px;
+  padding: 5px;
+  top: -33px;
   z-index: 2000;
+  background-color: var(--clr-bg-1);
   color: var(--clr-accent-2);
 }

@@ -20,24 +20,11 @@ export default function SignupPage() {
           "To get started, simply register with your chosen username, password, and select your sobriety start date. Your information is securely stored and kept private. We only save your registration details to maintain the confidentiality of your data.",
           "Track your clean time visually and stay motivated with CLEAN. Whether you're starting fresh or continuing your progress, our app offers a clear visualization of your accomplishments, helping you stay focused on your goals.",
         ]}
-        showButton={true}
-        buttonText="Back"
+        showButton={false}
+        buttonText=""
         buttonHref="/"
       />
-      {/* <InfoText
-        style={{ marginTop: "10px" }}
-        title="Sign Up:"
-        subtitle="Placeholder"
-        text={[
-          " Here the user will add user name, password and start date - have no backend yet work in progress ",
-          "User name",
-          "Password",
-          "Start date 2024-01-23 hardcoded test date",
-        ]}
-        showButton={true}
-        buttonText="Sign-up"
-        buttonHref="/clean"
-      /> */}
+
       <SignUpForm />
 
       <InfoText
@@ -57,12 +44,12 @@ export default function SignupPage() {
           "2. Select 'Add to Home Screen'.",
           "3. Confirm by tapping 'Add'.",
         ]}
-        showButton={false}
-        buttonText=""
+        showButton={true}
+        buttonText="Back"
         buttonHref="/"
       />
 
-      <InfoText
+      {/* <InfoText
         style={{ marginTop: "10px" }}
         title="Privacy Policy"
         subtitle="Your Data Protection Rights"
@@ -76,7 +63,7 @@ export default function SignupPage() {
         showButton={false}
         buttonText=""
         buttonHref="/"
-      />
+      /> */}
 
       <Fotter />
     </div>

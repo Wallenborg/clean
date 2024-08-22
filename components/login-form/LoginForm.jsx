@@ -16,43 +16,41 @@ export default function LoginForm() {
   };
 
   return (
-    <section className="form-container">
-      <div className="form-shape">
-        <form className="form-login" onSubmit={handleSubmit(onSubmit)}>
-          <label className="label-form" htmlFor="username">
-            User Name:
-          </label>
-          <input
-            type="text"
-            id="usernam"
-            {...register("usernam", {
-              required: "All fields must be completed.",
-            })}
-          />
-          {errors.fname && (
-            <p className="error-message">{errors.usernam.message}</p>
-          )}
+    <div className="form-shape">
+      <form className="form-login" onSubmit={handleSubmit(onSubmit)}>
+        <label className="label-form" htmlFor="username">
+          User Name:
+        </label>
+        <input
+          type="text"
+          id="usernam"
+          {...register("usernam", {
+            required: "All fields must be completed.",
+          })}
+        />
+        {errors.fname && (
+          <p className="error-message">{errors.usernam.message}</p>
+        )}
 
-          <label className="label-form" htmlFor="password">
-            Password:
-          </label>
-          <input
-            type="password"
-            id="password"
-            {...register("password", {
-              required: "All fields must be completed.",
-            })}
-          />
-          {errors.lname && (
-            <p className="error-message">{errors.password.message}</p>
-          )}
+        <label className="label-form" htmlFor="password">
+          Password:
+        </label>
+        <input
+          type="password"
+          id="password"
+          {...register("password", {
+            required: "All fields must be completed.",
+          })}
+        />
+        {errors.lname && (
+          <p className="error-message">{errors.password.message}</p>
+        )}
 
-          <Button text="Login" className="button-center-bottom" />
-        </form>
-        <Link href="/clean">
-          <Button text="Login" className="button-center-bottom" />
-        </Link>
-      </div>
-    </section>
+        <Button text="Login" className="button-center-bottom" />
+      </form>
+      <Link href="/clean">
+        <Button text="Login" className="button-center-bottom" />
+      </Link>
+    </div>
   );
 }
