@@ -31,3 +31,11 @@
   background-color: var(--clr-bg-1);
   color: var(--clr-accent-2);
 }
+
+.input-field {
+  font-size: 16px;
+}
+
+.datepicker-input {
+  font-size: 16px;
+}

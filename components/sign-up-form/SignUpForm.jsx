@@ -25,6 +25,7 @@ export default function SignUpForm() {
           User Name:
         </label>
         <input
+          className="input-field"
           type="text"
           id="username"
           {...register("username", {
@@ -39,6 +40,7 @@ export default function SignUpForm() {
           Password:
         </label>
         <input
+          className="input-field"
           type="password"
           id="password"
           {...register("password", {
