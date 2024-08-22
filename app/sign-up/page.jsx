@@ -3,6 +3,7 @@ import Header from "@/components/header/Header";
 import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
 import RandomCirclesBackground from "@/components/random-circles-background/RandomCirclesBackground";
+import SignUpForm from "@/components/sign-up-form/SignUpForm";
 
 export default function SignupPage() {
   return (
@@ -23,7 +24,7 @@ export default function SignupPage() {
         buttonText="Back"
         buttonHref="/"
       />
-      <InfoText
+      {/* <InfoText
         style={{ marginTop: "10px" }}
         title="Sign Up:"
         subtitle="Placeholder"
@@ -36,7 +37,8 @@ export default function SignupPage() {
         showButton={true}
         buttonText="Sign-up"
         buttonHref="/clean"
-      />
+      /> */}
+      <SignUpForm />
 
       <InfoText
         style={{ marginTop: "10px" }}
