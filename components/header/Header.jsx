@@ -9,6 +9,7 @@ import { useStartDate } from "@/context/StartDateContext";
 
 const afacad = Afacad({
   subsets: ["latin"],
+  weight: "400",
 });
 
 export default function Header({ includeNav }) {
