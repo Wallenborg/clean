@@ -15,7 +15,6 @@ export default function SignUpForm() {
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
-    // Later, connect to Firebase backend
   };
 
   return (

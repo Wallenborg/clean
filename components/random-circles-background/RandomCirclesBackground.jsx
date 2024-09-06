@@ -1,48 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import "./RandomCirclesBackground.css";
-
-// export default function RandomCirclesBackground() {
-//   const [smallCircleCount, setSmallCircleCount] = useState(10);
-//   const [largeCircleCount, setLargeCircleCount] = useState(5);
-
-//   useEffect(() => {
-//     const updateCircleCount = () => {
-//       if (window.matchMedia("(max-width: 768px)").matches) {
-//         // Mobil
-//         setSmallCircleCount(10);
-//         setLargeCircleCount(4);
-//       } else {
-//         // Laptop plus
-//         setSmallCircleCount(30);
-//         setLargeCircleCount(5);
-//       }
-//     };
-
-//     updateCircleCount();
-
-//     window.addEventListener("resize", updateCircleCount);
-
-//     return () => {
-//       window.removeEventListener("resize", updateCircleCount);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="random-circles-background">
-//       {[...Array(smallCircleCount + largeCircleCount)].map((_, i) => (
-//         <div
-//           key={i}
-//           className={`circle ${i < smallCircleCount ? "small" : "big"}`}
-//           style={{
-//             top: `${Math.random() * 100}%`,
-//             left: `${Math.random() * 100}%`,
-//           }}
-//         ></div>
-//       ))}
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useState } from "react";
 import "./RandomCirclesBackground.css";
 
@@ -54,11 +9,9 @@ export default function RandomCirclesBackground() {
   useEffect(() => {
     const updateCircleCount = () => {
       if (window.matchMedia("(max-width: 768px)").matches) {
-        // Mobil
         setSmallCircleCount(0);
         setLargeCircleCount(0);
       } else {
-        // Laptop plus
         setSmallCircleCount(30);
         setLargeCircleCount(4);
       }
@@ -73,7 +26,6 @@ export default function RandomCirclesBackground() {
   }, []);
 
   useEffect(() => {
-    // Generera cirklarnas positioner endast på klienten
     const newCircles = [...Array(smallCircleCount + largeCircleCount)].map(
       (_, i) => ({
         top: `${Math.random() * 100}%`,
@@ -82,7 +34,7 @@ export default function RandomCirclesBackground() {
       })
     );
     setCircles(newCircles);
-  }, [smallCircleCount, largeCircleCount]); // Körs om små eller stora cirklar ändras
+  }, [smallCircleCount, largeCircleCount]);
 
   return (
     <div className="random-circles-background">

@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 const StartDateContext = createContext();
 
 export const StartDateProvider = ({ children }) => {
-  const [startDate] = useState("2023-07-15"); // Default start date "hard code" will be fetch from login user in database firebase
+  const [startDate] = useState("2023-07-15");
 
   return (
     <StartDateContext.Provider value={startDate}>
