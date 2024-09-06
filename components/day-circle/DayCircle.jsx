@@ -92,7 +92,7 @@ const DayCircle = () => {
       <MainCircle startDate={startDate} />
       {year >= 1 ? (
         <div className="year-display">
-          {year} {year === 1 ? "Year" : "Years"}
+          + {year} {year === 1 ? "Year" : "Years"}
         </div>
       ) : null}
     </div>
