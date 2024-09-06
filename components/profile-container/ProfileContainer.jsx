@@ -13,12 +13,9 @@ export default function ProfileContainer({ onClose }) {
       <IoMdCloseCircleOutline className="profile-close" onClick={onClose} />
       <RiUser3Line className="user-icon" />
       <p className="profile-text big">username</p>
-      // need to get the user name from datebase in firebase
       <p className="profile-text">Clean Since</p>
       <p className="profile-text big">{startDate}</p>
-      <Button text="Re-start" className="button-left-bottom" /> /* this need to
-      be conected to database and be abel to change startdate conectet to user
-      */
+      <Button text="Re-start" className="button-left-bottom" />
     </section>
   );
 }
