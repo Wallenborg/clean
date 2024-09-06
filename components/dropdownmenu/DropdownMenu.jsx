@@ -1,23 +1,3 @@
-// import Link from "next/link";
-// import "./Dropdown.css";
-// import Button from "../button/Button";
-
-// export default function DropdownMenu({ startDate }) {
-//   const daysPassed = useGetTimeSpan(startDate);
-//   const weeksPassed = Math.floor(daysPassed / 7);
-
-//   return (
-//     <div className="dropdown-menu">
-//       <p className="dropdown-text">Days Clean: {daysPassed}</p>
-//       <p className="dropdown-text">Weeks Clean: {weeksPassed}</p>
-//       <Button text="Profile" />
-//       <Link className="dropdown-link" href="/">
-//         <Button text="Logout" />
-//       </Link>
-//     </div>
-//   );
-// }
-
 import { useState } from "react";
 import Button from "../button/Button";
 import "./Dropdown.css";
