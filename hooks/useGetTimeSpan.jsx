@@ -1,4 +1,5 @@
 // useGetTimeSpan.jsx
+"use client";
 import { useState, useEffect } from "react";
 
 function useGetTimeSpan(startDate) {
