@@ -1,3 +1,4 @@
+//layout.js
 import { Roboto } from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +21,13 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icons/icon-192x192.png" sizes="192x192" />
         <link rel="icon" href="/icons/icon-512x512.png" sizes="512x512" />
       </head>
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <UserProvider>
+          {" "}
+          {/* Wrap with UserProvider */}
+          {children}
+        </UserProvider>
+      </body>
     </html>
   );
 }

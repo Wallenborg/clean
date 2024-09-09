@@ -1,14 +1,22 @@
+// clean/page.jsx
+// In clean/page.jsx
+import { StartDateProvider } from "@/context/StartDateContext";
+import { UserProvider } from "@/context/UserContext";
 import Header from "@/components/header/Header";
 import DayCircle from "@/components/day-circle/DayCircle";
-import { StartDateProvider } from "@/context/StartDateContext";
+import ProtectedRoute from "@/components/protected-route/ProtectedRoute";
 
-export default async function CleanPage() {
+export default function CleanPage() {
   return (
-    <StartDateProvider>
-      <div className="no-scroll">
-        <Header includeNav={true} />
-        <DayCircle />
-      </div>
-    </StartDateProvider>
+    <ProtectedRoute>
+      <UserProvider>
+        <StartDateProvider>
+          <div className="no-scroll">
+            <Header includeNav={true} />
+            <DayCircle />
+          </div>
+        </StartDateProvider>
+      </UserProvider>
+    </ProtectedRoute>
   );
 }

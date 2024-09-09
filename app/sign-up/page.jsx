@@ -1,3 +1,4 @@
+//sign-up/page.js
 "use client";
 import Header from "@/components/header/Header";
 import InfoText from "@/components/infotext/InfoText";
@@ -48,22 +49,6 @@ export default function SignupPage() {
         buttonText="Back"
         buttonHref="/"
       />
-
-      {/* <InfoText
-        style={{ marginTop: "10px" }}
-        title="Privacy Policy"
-        subtitle="Your Data Protection Rights"
-        text={[
-          "We are committed to protecting your personal data and respecting your privacy. Here's how we handle your data in compliance with GDPR:",
-          "1. **Data Collection** - We only collect your username, password, and start date. This information is necessary for the app's functionality.",
-          "2. **User Consent** - By using our app, you consent to the collection and processing of your data.",
-          "3. **Data Security** - We implement strong security measures to protect your data from unauthorized access or breaches.",
-          "4. **Right to Access and Erasure** - You have the right to access your data and request its deletion at any time.",
-        ]}
-        showButton={false}
-        buttonText=""
-        buttonHref="/"
-      /> */}
 
       <Fotter />
     </div>
