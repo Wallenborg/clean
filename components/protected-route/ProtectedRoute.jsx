@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }) {
   useEffect(() => {
     if (!user) {
       // If no user is logged in, redirect to login page
-      router.push("/login");
+      router.push("/");
     }
   }, [user, router]);
 
