@@ -71,11 +71,17 @@ export default function LoginForm() {
 
   const onSubmit = async (data) => {
     try {
-      await signInWithEmailAndPassword(auth, data.username, data.password);
-      // Redirect to the clean page after login
+      // Convert the username to an email format
+      const email = `${data.username}@example.com`;
+
+      // Attempt to sign in with the converted email address and password
+      await signInWithEmailAndPassword(auth, email, data.password);
+
+      // On successful login, redirect to the protected page
       window.location.href = "/clean";
     } catch (error) {
       console.error("Error logging in:", error);
+      alert("Login failed. Please check your username and password.");
     }
   };
 
