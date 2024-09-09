@@ -1,6 +1,7 @@
 //layout.js
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { UserProvider } from "@/context/UserContext";
 
 const roboto = Roboto({
   weight: "400",
