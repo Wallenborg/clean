@@ -5,7 +5,6 @@ import { CgMenuRound } from "react-icons/cg";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import "./Header.css";
 import DropdownMenu from "../dropdownmenu/DropdownMenu";
-import { useStartDate } from "@/context/StartDateContext";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -32,8 +31,6 @@ export default function Header({ includeNav }) {
     setDropdownVisible(!dropdownVisible);
   };
 
-  const startDate = useStartDate();
-
   return (
     <header
       style={{ opacity, transition: "opacity 0.2s ease-in-out" }}
@@ -50,7 +47,7 @@ export default function Header({ includeNav }) {
           ) : (
             <CgMenuRound className="header-nav" onClick={toggleDropdown} />
           )}
-          {dropdownVisible && <DropdownMenu startDate={startDate} />}
+          {dropdownVisible && <DropdownMenu />}
         </div>
       )}
     </header>
