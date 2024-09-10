@@ -1,20 +1,23 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import { useUser } from "@/context/UserContext"; // Updated to use UserContext
+import { useUser } from "@/context/UserContext";
 import useGetTimeSpan from "@/hooks/useGetTimeSpan";
 import useGenerateCircles from "@/hooks/useGenerateCircles";
 import MainCircle from "../main-circle/MainCircle";
 import "./DayCircle.css";
 
 const DayCircle = () => {
-  const user = useUser();
-  const startDate = user?.startDate || null; // Get the startDate from user
+  const { user } = useUser(); // Get the user object from context
+  const startDate = user?.startDate || null; // Ensure startDate is accessed correctly
   const daysPassed = useGetTimeSpan(startDate); // Calculate the number of days passed since the start date
   const { circles, year } = useGenerateCircles(daysPassed); // Generate circles based on the days passed
   const svgRef = useRef(); // Reference to the SVG element for D3.js manipulation
 
   useEffect(() => {
+    if (!svgRef.current) return; // Early exit if SVG reference is not available
+
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
 
@@ -80,7 +83,7 @@ const DayCircle = () => {
     };
 
     animateCirclesSequentially(circles);
-  }, [circles]);
+  }, [circles, svgRef]); // Add svgRef to dependencies
 
   return (
     <div className="daycircle-container">
