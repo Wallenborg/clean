@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../lib/firebase";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 import "./LoginForm.css";
+import Button from "../button/Button";
 
 export default function LoginForm() {
   const {
@@ -66,9 +67,11 @@ export default function LoginForm() {
           <p className="error-message">{errors.password.message}</p>
         )}
 
-        <button type="submit" className="button-center-bottom">
-          Log In
-        </button>
+        <Button
+          type="submit"
+          text="Log In"
+          className="button-center-bottom"
+        ></Button>
       </form>
     </div>
   );
