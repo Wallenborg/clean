@@ -143,7 +143,7 @@ export default function ProfileContainer({ onClose }) {
       {confirmDelete && (
         <div className="password-confirmation">
           <p className="delete-user-text">
-            Enter your password and press confirm.
+            Enter your password and press confirm to delete profile.
           </p>
           <input
             type="password"
