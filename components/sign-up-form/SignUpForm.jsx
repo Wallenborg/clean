@@ -232,10 +232,7 @@ export default function SignUpForm({ onSuccess }) {
           <p className="error-message">{errors.startDate.message}</p>
         )}
 
-        <Button
-          text={loading ? "Signing Up..." : "Sign Up"}
-          className="button-center-bottom"
-        />
+        <Button text="Sign Up" className="button-center-bottom" />
       </form>
     </div>
   );
