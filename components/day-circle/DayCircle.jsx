@@ -177,7 +177,7 @@ const DayCircle = () => {
             .attr("stroke", "#18191a")
             .attr("stroke-width", 1)
             .attr("class", "custom-circle");
-        }, index * 200);
+        }, index * 50);
       });
     };
 
