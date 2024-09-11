@@ -142,12 +142,15 @@ export default function ProfileContainer({ onClose }) {
       {/* Password input for confirmation (only show if delete is clicked) */}
       {confirmDelete && (
         <div className="password-confirmation">
+          <p className="delete-user-text">
+            Enter your password and press confirm.
+          </p>
           <input
             type="password"
-            placeholder="Enter your password"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="input-field"
+            className="input-field-password"
           />
         </div>
       )}
