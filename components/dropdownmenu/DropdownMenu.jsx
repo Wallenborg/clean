@@ -13,6 +13,7 @@ export default function DropdownMenu() {
   const { user } = useUser(); // Get the user object from context
   const daysPassed = useGetTimeSpan(user?.startDate); // Use user startDate
   const weeksPassed = Math.floor(daysPassed / 7);
+  const yearsPassed = Math.floor(daysPassed / 365);
   const router = useRouter(); // Initialize useRouter
 
   const toggleProfile = () => {
@@ -35,6 +36,7 @@ export default function DropdownMenu() {
       <div className="dropdown-menu">
         <p className="dropdown-text">Days Clean: {daysPassed || 0}</p>
         <p className="dropdown-text">Weeks Clean: {weeksPassed || 0}</p>
+        <p className="dropdown-text">Years Clean: {yearsPassed || 0}</p>
         <Button text="Profile" onClick={toggleProfile} />
         <Button text="Logout" onClick={handleLogout} />
       </div>
