@@ -23,6 +23,11 @@
   bottom: 10px;
   right: 10px;
 }
+.button-right-bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
 
 .button-center-top {
   position: absolute;

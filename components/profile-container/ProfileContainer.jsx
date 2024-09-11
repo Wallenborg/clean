@@ -4,16 +4,24 @@ import Button from "../button/Button";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { RiUser3Line } from "react-icons/ri";
 import { useUser } from "@/context/UserContext";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {
+  getAuth,
+  deleteUser,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
+} from "firebase/auth";
 import "./ProfileContainer.css";
 
 export default function ProfileContainer({ onClose }) {
   const { user, setUser } = useUser(); // Include setUser to update user state
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [newStartDate, setNewStartDate] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(false); // Toggle delete confirmation
+  const [password, setPassword] = useState(""); // Store user password input
 
   const formattedStartDate =
     user && user.startDate
@@ -31,8 +39,8 @@ export default function ProfileContainer({ onClose }) {
     }
 
     try {
-      const normalizedUsername = user.username.toLowerCase(); // Ensure username is in lowercase
-      const userDocRef = doc(db, "users", normalizedUsername); // Use normalized username
+      const normalizedUsername = user.username.toLowerCase();
+      const userDocRef = doc(db, "users", normalizedUsername);
       await updateDoc(userDocRef, {
         startDate: newStartDate.toISOString(),
       });
@@ -40,14 +48,50 @@ export default function ProfileContainer({ onClose }) {
       console.log("Start date updated successfully");
       setShowDatePicker(false);
 
-      // Fetch the updated user data and refresh the context
       const updatedUserDoc = await getDoc(userDocRef);
       if (updatedUserDoc.exists()) {
         const updatedUserData = { ...user, ...updatedUserDoc.data() };
-        setUser(updatedUserData); // Update user context with the new data
+        setUser(updatedUserData);
       }
     } catch (error) {
       console.error("Error updating start date:", error);
+    }
+  };
+
+  const handleDeleteUser = async () => {
+    if (!user || !password) {
+      alert("Please enter your password to proceed.");
+      return;
+    }
+
+    try {
+      const auth = getAuth();
+      const currentUser = auth.currentUser;
+
+      const credential = EmailAuthProvider.credential(
+        currentUser.email,
+        password
+      );
+
+      // Reauthenticate the user
+      await reauthenticateWithCredential(currentUser, credential);
+      console.log("User reauthenticated successfully");
+
+      // Step 1: Delete user data from Firestore
+      const normalizedUsername = user.username.toLowerCase();
+      const userDocRef = doc(db, "users", normalizedUsername);
+      await deleteDoc(userDocRef);
+      console.log("User data deleted successfully from Firestore");
+
+      // Step 2: Delete user from Firebase Authentication
+      await deleteUser(currentUser);
+      console.log("User deleted successfully from Firebase Authentication");
+
+      setUser(null);
+      onClose(); // Close the profile view
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      alert("Error deleting user. Please try again.");
     }
   };
 
@@ -58,6 +102,7 @@ export default function ProfileContainer({ onClose }) {
       <p className="profile-text big">{user ? user.username : "Loading..."}</p>
       <p className="profile-text">Clean Since</p>
       <p className="profile-text big">{formattedStartDate}</p>
+
       {showDatePicker && (
         <DatePicker
           selected={newStartDate}
@@ -67,6 +112,8 @@ export default function ProfileContainer({ onClose }) {
           className="datepicker-input"
         />
       )}
+
+      {/* Update start date button */}
       <Button
         text={showDatePicker ? "Confirm" : "Re-start"}
         className="button-left-bottom"
@@ -78,6 +125,32 @@ export default function ProfileContainer({ onClose }) {
           }
         }}
       />
+
+      {/* Delete user button */}
+      <Button
+        text={confirmDelete ? "Confirm" : "Delete"}
+        className="button-right-bottom"
+        onClick={() => {
+          if (confirmDelete) {
+            handleDeleteUser(); // Confirm delete action
+          } else {
+            setConfirmDelete(true); // Show password input for confirmation
+          }
+        }}
+      />
+
+      {/* Password input for confirmation (only show if delete is clicked) */}
+      {confirmDelete && (
+        <div className="password-confirmation">
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+          />
+        </div>
+      )}
     </section>
   );
 }
