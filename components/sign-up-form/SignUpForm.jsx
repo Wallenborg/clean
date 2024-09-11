@@ -64,6 +64,7 @@ export default function SignUpForm() {
           className="input-field"
           type="text"
           id="username"
+          placeholder="User name"
           {...register("username", {
             required: "All fields must be completed.",
           })}
@@ -79,6 +80,7 @@ export default function SignUpForm() {
           className="input-field"
           type="password"
           id="password"
+          placeholder="Password"
           {...register("password", {
             required: "All fields must be completed.",
           })}
