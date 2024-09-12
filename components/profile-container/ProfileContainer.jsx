@@ -118,7 +118,7 @@ export default function ProfileContainer({ onClose }) {
             selected={newStartDate}
             onChange={handleDateChange}
             dateFormat="dd/MM/yyyy"
-            placeholderText="Select new start date"
+            placeholderText="dd/MM/yyyy"
             className="input-field"
           />
         </div>

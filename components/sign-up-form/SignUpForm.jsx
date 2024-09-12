@@ -220,7 +220,7 @@ export default function SignUpForm({ onSuccess }) {
           rules={{ required: "All fields must be completed." }}
           render={({ field }) => (
             <DatePicker
-              placeholderText="Select start date"
+              placeholderText="dd/MM/yyyy"
               onChange={(date) => field.onChange(date)}
               selected={field.value}
               dateFormat="dd/MM/yyyy"
