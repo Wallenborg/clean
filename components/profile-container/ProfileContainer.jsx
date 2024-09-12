@@ -107,7 +107,7 @@ export default function ProfileContainer({ onClose }) {
         <div className="date-picker-container">
           <div>
             <p className="restart-text">
-              No worries, it's happened to the best.
+              No worries, it&apos;s happened to the best.
             </p>
             <p className="restart-text">Today is a new day.</p>
             <p className="restart-text extra-margin">
