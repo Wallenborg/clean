@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 450px;
+  height: 500px;
 }
 @media (min-width: 801px) {
   .form-container {
