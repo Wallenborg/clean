@@ -104,13 +104,24 @@ export default function ProfileContainer({ onClose }) {
       <p className="profile-text big">{formattedStartDate}</p>
 
       {showDatePicker && (
-        <DatePicker
-          selected={newStartDate}
-          onChange={handleDateChange}
-          dateFormat="dd/MM/yyyy"
-          placeholderText="Select new start date"
-          className="input-field"
-        />
+        <div className="date-picker-container">
+          <div>
+            <p className="restart-text">
+              No worries, it's happened to the best.
+            </p>
+            <p className="restart-text">Today is a new day.</p>
+            <p className="restart-text extra-margin">
+              Choose a new date and then press confirm
+            </p>
+          </div>
+          <DatePicker
+            selected={newStartDate}
+            onChange={handleDateChange}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Select new start date"
+            className="input-field"
+          />
+        </div>
       )}
 
       {/* Update start date button */}

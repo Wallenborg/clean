@@ -6,7 +6,7 @@
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 100px 10px;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
@@ -55,4 +55,24 @@
   position: absolute;
   bottom: 90px;
   left: 10px;
+}
+
+.placement-datepicker {
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+}
+.date-picker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.restart-text {
+  color: var(--clr-accent-2);
+  width: 100%;
+  text-align: center;
+}
+.extra-margin {
+  margin-top: 10px;
 }
