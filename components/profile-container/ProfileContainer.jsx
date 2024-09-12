@@ -109,7 +109,7 @@ export default function ProfileContainer({ onClose }) {
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select new start date"
-          className="datepicker-input"
+          className="input-field"
         />
       )}
 
@@ -150,7 +150,7 @@ export default function ProfileContainer({ onClose }) {
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="input-field-password"
+            className="input-field-password input-field"
           />
         </div>
       )}

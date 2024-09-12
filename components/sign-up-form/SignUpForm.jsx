@@ -224,7 +224,7 @@ export default function SignUpForm({ onSuccess }) {
               onChange={(date) => field.onChange(date)}
               selected={field.value}
               dateFormat="dd/MM/yyyy"
-              className="datepicker-input"
+              className="input-field"
             />
           )}
         />
