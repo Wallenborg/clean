@@ -120,6 +120,7 @@ export default function ProfileContainer({ onClose }) {
             dateFormat="dd/MM/yyyy"
             placeholderText="dd/MM/yyyy"
             className="input-field"
+            onFocus={(e) => e.target.blur()}
           />
         </div>
       )}

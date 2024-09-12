@@ -225,6 +225,7 @@ export default function SignUpForm({ onSuccess }) {
               selected={field.value}
               dateFormat="dd/MM/yyyy"
               className="input-field"
+              onFocus={(e) => e.target.blur()}
             />
           )}
         />
