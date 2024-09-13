@@ -34,7 +34,7 @@
 
 .error-message {
   position: fixed;
-  top: 40px;
+  top: 100px;
   font-size: 1rem;
   color: var(--clr-accent-2);
   background-color: var(--clr-bg-1);
