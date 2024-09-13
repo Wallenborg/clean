@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-
+import { useState } from "react"; // Import useState here
 import { auth, db } from "../../lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
@@ -15,6 +15,8 @@ export default function SignUpForm({ onSuccess }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(""); // Initialize state for error message
 
   const onSubmit = async (data) => {
     try {
@@ -23,7 +25,7 @@ export default function SignUpForm({ onSuccess }) {
 
       // Validate password length
       if (password.length < 6) {
-        alert("Password must be at least 6 characters long.");
+        setErrorMessage("Password must be at least 6 characters long.");
         return;
       }
 
@@ -34,7 +36,9 @@ export default function SignUpForm({ onSuccess }) {
       const userDocRef = doc(db, "users", normalizedUsername);
       const userDocSnapshot = await getDoc(userDocRef);
       if (userDocSnapshot.exists()) {
-        alert("Username already exists. Please choose a different username.");
+        setErrorMessage(
+          "Username already exists. Please choose a different username."
+        );
         return;
       }
 
@@ -58,7 +62,7 @@ export default function SignUpForm({ onSuccess }) {
       onSuccess(); // Trigger the success callback
     } catch (error) {
       console.error("Error signing up:", error);
-      alert("Signup failed. Please try again.");
+      setErrorMessage("Signup failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -79,7 +83,10 @@ export default function SignUpForm({ onSuccess }) {
             required: "All fields must be completed.",
           })}
         />
-        {errors.username && alert(errors.username.message)}
+        {errors.username && (
+          <p className="error-message">{errors.username.message}</p>
+        )}
+
         <label className="sign-up-label-form" htmlFor="password">
           Password:
         </label>
@@ -92,7 +99,10 @@ export default function SignUpForm({ onSuccess }) {
             required: "All fields must be completed.",
           })}
         />
-        {errors.password && alert(errors.password.message)}
+        {errors.password && (
+          <p className="error-message">{errors.password.message}</p>
+        )}
+
         <label className="sign-up-label-form" htmlFor="startdate">
           Start Date:
         </label>
@@ -111,7 +121,12 @@ export default function SignUpForm({ onSuccess }) {
             />
           )}
         />
-        {errors.startDate && alert(errors.startDate.message)}
+        {errors.startDate && (
+          <p className="error-message">{errors.startDate.message}</p>
+        )}
+
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
         <Button text="Sign Up" className="button-center-bottom" />
       </form>
     </div>

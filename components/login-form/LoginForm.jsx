@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../lib/firebase";
-import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
+import { useRouter } from "next/navigation";
+import { useState } from "react"; // Import useState here
 import "./LoginForm.css";
 import Button from "../button/Button";
 
@@ -11,24 +12,20 @@ export default function LoginForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState(""); // Initialize state for error message
 
   const onSubmit = async (data) => {
     try {
-      // Normalize the username to lowercase
       const normalizedUsername = data.username.toLowerCase();
-
-      // Convert the normalized username to an email format
       const email = `${normalizedUsername}@example.com`;
 
-      // Attempt to sign in with the converted email address and password
       await signInWithEmailAndPassword(auth, email, data.password);
 
-      // On successful login, redirect to the protected page using router.push
       router.push("/clean");
     } catch (error) {
       console.error("Error logging in:", error);
-      alert("Login failed. Please check your username and password.");
+      setErrorMessage("Login failed. Please check your username and password.");
     }
   };
 
@@ -47,7 +44,10 @@ export default function LoginForm() {
             required: "All fields must be completed.",
           })}
         />
-        {errors.username && alert(errors.username.message)}
+        {errors.username && (
+          <p className="error-message">{errors.username.message}</p>
+        )}
+
         <label className="label-form" htmlFor="password">
           Password:
         </label>
@@ -60,12 +60,13 @@ export default function LoginForm() {
             required: "All fields must be completed.",
           })}
         />
-        {errors.password && alert(errors.password.message)}
-        <Button
-          type="submit"
-          text="Log In"
-          className="button-center-bottom"
-        ></Button>
+        {errors.password && (
+          <p className="error-message">{errors.password.message}</p>
+        )}
+
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        <Button type="submit" text="Log In" className="button-center-bottom" />
       </form>
     </div>
   );

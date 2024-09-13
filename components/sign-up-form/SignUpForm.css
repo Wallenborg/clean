@@ -31,3 +31,13 @@
 .datepicker-input {
   font-size: 16px;
 }
+
+.error-message {
+  position: fixed;
+  top: 40px;
+  font-size: 1rem;
+  color: var(--clr-accent-2);
+  background-color: var(--clr-bg-1);
+  border-radius: 10px;
+  padding: 5px 8px;
+}
