@@ -1,48 +1,34 @@
-// "use client";
-// import { useEffect } from "react";
-// import { useRouter } from "next/navigation"; // useRouter for programmatic navigation
-// import { useUser } from "@/context/UserContext"; // To get the user context
-
-// export default function ProtectedRoute({ children }) {
-//   const user = useUser();
-//   const router = useRouter();
-
-//   useEffect(() => {
-//     if (!user) {
-//       // If no user is logged in, redirect to login page
-//       router.push("/");
-//     }
-//   }, [user, router]);
-
-//   // If user is logged in, show the children components (i.e., the protected page)
-//   if (!user) {
-//     return null; // You can also return a loading spinner while checking the auth state
-//   }
-
-//   return children;
-// }
-
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/context/UserContext";
 
 export default function ProtectedRoute({ children }) {
-  const user = useUser();
+  const { user } = useUser();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("User:", user); // Debugging log
-    if (!user) {
-      // If no user is logged in, redirect to login page
+    if (user === null) {
+      setIsLoading(false); // Set loading to false when auth check is complete
+    } else if (user) {
+      setIsLoading(false); // Auth check complete, user is logged in
+    } else {
+      setIsLoading(true); // Still checking
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (!isLoading && !user) {
+      // Only redirect if not loading and no user is found
       router.push("/");
     }
-  }, [user, router]);
+  }, [isLoading, user, router]);
 
-  // If user is logged in, show the children components (i.e., the protected page)
-  if (!user) {
-    return null; // You can also return a loading spinner while checking the auth state
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
-  return children;
+  // Render children (protected page) only if the user is logged in
+  return user ? children : null;
 }
