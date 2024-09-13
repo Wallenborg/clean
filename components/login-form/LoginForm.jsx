@@ -47,10 +47,7 @@ export default function LoginForm() {
             required: "All fields must be completed.",
           })}
         />
-        {errors.username && (
-          <p className="error-message">{errors.username.message}</p>
-        )}
-
+        {errors.username && alert(errors.username.message)}
         <label className="label-form" htmlFor="password">
           Password:
         </label>
@@ -63,10 +60,7 @@ export default function LoginForm() {
             required: "All fields must be completed.",
           })}
         />
-        {errors.password && (
-          <p className="error-message">{errors.password.message}</p>
-        )}
-
+        {errors.password && alert(errors.password.message)}
         <Button
           type="submit"
           text="Log In"

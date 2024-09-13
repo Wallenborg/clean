@@ -24,14 +24,6 @@
   gap: 7px;
 }
 
-.error-message {
-  position: absolute;
-  padding: 5px;
-  top: -33px;
-  background-color: var(--clr-bg-1);
-  color: var(--clr-accent-2);
-}
-
 .input-field {
   font-size: 16px;
 }
