@@ -15,8 +15,8 @@ export default function SignUpForm({ onSuccess }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(""); // Initialize state for error message
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
     try {
@@ -58,7 +58,6 @@ export default function SignUpForm({ onSuccess }) {
         uid: user.uid,
       });
 
-      alert("Signup successful! User created.");
       onSuccess(); // Trigger the success callback
     } catch (error) {
       console.error("Error signing up:", error);

@@ -41,3 +41,16 @@
   border-radius: 10px;
   padding: 5px 8px;
 }
+.success-message {
+  position: relative;
+  text-align: center;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1rem;
+  color: var(--clr-accent-2);
+  background-color: var(--clr-bg-1);
+  border-radius: 10px;
+  padding: 5px 8px;
+  z-index: 2000;
+}

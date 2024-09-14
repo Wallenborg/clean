@@ -86,7 +86,16 @@ export default function SignupPage() {
       />
 
       {isSignedUp ? (
-        <LoginForm /> // Render LoginForm after successful sign-up
+        <div>
+          <p className="success-message">
+            Signup successful! You can now log in.
+          </p>
+          <LoginForm>
+            <p className="success-message">
+              Signup successful! You can now log in.
+            </p>
+          </LoginForm>
+        </div>
       ) : (
         <SignUpForm onSuccess={() => setIsSignedUp(true)} /> // Pass a callback to set isSignedUp to true
       )}
