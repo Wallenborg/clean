@@ -4,16 +4,22 @@
   align-items: center; */
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  margin: 0 0 10vh 0;
+  height: 100dvh;
+  /* margin: 0 0 10vh 0; */
   overflow: hidden;
 }
 
-.daycircle-container svg {
+/* daycircle-container {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+} */
+
+.daycircle-container svg {
+  position: absolute;
   top: 0;
   left: 0;
-
   z-index: 2000;
   pointer-events: none;
 }

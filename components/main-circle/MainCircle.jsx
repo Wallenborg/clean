@@ -22,22 +22,24 @@ export default function MainCircle({ startDate }) {
       setShowDaysPassed(false);
     }, 5000);
   };
-
+  // test by adding a box for main circle
   return (
-    <div
-      className="maincircle-circle"
-      style={circleStyle}
-      onClick={toggleDaysPassed}
-    >
-      <div className="maincircle-eyes">
-        <span className="maincircle-eye"></span>
-        <span className="maincircle-eye"></span>
-      </div>
-      {showDaysPassed && (
-        <div className="days-passed-text">
-          {startDate && <>Days Clean: {daysPassed}</>}
+    <div className="test">
+      <div
+        className="maincircle-circle"
+        style={circleStyle}
+        onClick={toggleDaysPassed}
+      >
+        <div className="maincircle-eyes">
+          <span className="maincircle-eye"></span>
+          <span className="maincircle-eye"></span>
         </div>
-      )}
+        {showDaysPassed && (
+          <div className="days-passed-text">
+            {startDate && <>Days Clean: {daysPassed}</>}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
