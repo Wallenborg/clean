@@ -14,7 +14,6 @@
 }
 
 .dropdown-text {
-  /* padding-top: 20px; */
   border-bottom: 2px solid var(--clr-accent-2);
   color: var(--clr-text);
   width: fit-content;

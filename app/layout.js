@@ -23,11 +23,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icons/icon-512x512.png" sizes="512x512" />
       </head>
       <body className={roboto.className}>
-        <UserProvider>
-          {" "}
-          {/* Wrap with UserProvider */}
-          {children}
-        </UserProvider>
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   );

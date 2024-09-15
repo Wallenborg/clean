@@ -4,11 +4,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  /* border: 2px solid var(--clr-accent-2); */
+
   background-color: var(--clr-bg-1);
   border-radius: 20px;
   margin-bottom: 50px;
-  /* margin-top: 80px; */
+
   padding: 10px 30px 80px 30px;
 }
 

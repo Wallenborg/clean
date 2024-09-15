@@ -1,8 +1,6 @@
-//page.js
 "use client";
 import Header from "@/components/header/Header";
 import Hero from "@/components/hero/Hero";
-// import Form from "@/components/form/Form";
 import InfoText from "@/components/infotext/InfoText";
 import Fotter from "@/components/footer/Fotter";
 import FormContainer from "@/components/form-container /FormContainer";
@@ -13,7 +11,6 @@ export default function Home() {
       <Header includeNav={false} />
       <Hero />
       <div className="box">
-        {/* <Form /> */}
         <FormContainer />
         <InfoText
           style={{ marginTop: "80px" }}
