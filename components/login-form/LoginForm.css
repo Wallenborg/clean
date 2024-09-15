@@ -28,3 +28,14 @@
 .input-field {
   font-size: 16px;
 }
+
+.error-message-login {
+  position: relative;
+  top: -270px;
+  font-size: 1rem;
+  color: var(--clr-accent-2);
+  background-color: var(--clr-bg-1);
+  border: 1px solid var(--clr-accent-2);
+  border-radius: 10px;
+  padding: 5px 8px;
+}

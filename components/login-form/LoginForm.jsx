@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../lib/firebase";
 import { useRouter } from "next/navigation";
-import { useState } from "react"; // Import useState here
+import { useState } from "react";
 import "./LoginForm.css";
 import Button from "../button/Button";
 
@@ -25,13 +25,23 @@ export default function LoginForm() {
       router.push("/clean");
     } catch (error) {
       console.error("Error logging in:", error);
-      setErrorMessage("Login failed. Please check your username and password.");
+      setErrorMessage("Login failed. Check username and password.");
+    }
+  };
+
+  // Wrap handleSubmit to check for validation errors
+  const handleError = (errors) => {
+    if (errors.username || errors.password) {
+      setErrorMessage("All fields must be completed.");
     }
   };
 
   return (
     <div className="form-shape">
-      <form className="form-login" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="form-login"
+        onSubmit={handleSubmit(onSubmit, handleError)}
+      >
         <label className="label-form" htmlFor="username">
           User Name:
         </label>
@@ -40,13 +50,8 @@ export default function LoginForm() {
           type="text"
           id="username"
           placeholder="Username"
-          {...register("username", {
-            required: "All fields must be completed.",
-          })}
+          {...register("username", { required: true })}
         />
-        {errors.username && (
-          <p className="error-message">{errors.username.message}</p>
-        )}
 
         <label className="label-form" htmlFor="password">
           Password:
@@ -56,15 +61,11 @@ export default function LoginForm() {
           type="password"
           id="password"
           placeholder="Password"
-          {...register("password", {
-            required: "All fields must be completed.",
-          })}
+          {...register("password", { required: true })}
         />
-        {errors.password && (
-          <p className="error-message">{errors.password.message}</p>
-        )}
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {/* Display the central error message */}
+        {errorMessage && <p className="error-message-login">{errorMessage}</p>}
 
         <Button type="submit" text="Log In" className="button-center-bottom" />
       </form>

@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-import { useState } from "react"; // Import useState here
+import { useState } from "react";
 import { auth, db } from "../../lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
@@ -32,7 +32,7 @@ export default function SignUpForm({ onSuccess }) {
       // Normalize the username
       const normalizedUsername = username.toLowerCase();
 
-      // Check if the username already exists in Firestore
+      // Check if the username already exists in Firestore and give error message if it does.
       const userDocRef = doc(db, "users", normalizedUsername);
       const userDocSnapshot = await getDoc(userDocRef);
       if (userDocSnapshot.exists()) {
@@ -67,9 +67,17 @@ export default function SignUpForm({ onSuccess }) {
     }
   };
 
+  // Centralized error handling for validation
+  const handleError = () => {
+    setErrorMessage("All fields must be completed.");
+  };
+
   return (
     <div className="sign-up-form-shape">
-      <form className="sign-up-form-signup" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="sign-up-form-signup"
+        onSubmit={handleSubmit(onSubmit, handleError)}
+      >
         <label className="sign-up-label-form" htmlFor="username">
           User Name:
         </label>
@@ -78,13 +86,8 @@ export default function SignUpForm({ onSuccess }) {
           type="text"
           id="username"
           placeholder="User name"
-          {...register("username", {
-            required: "All fields must be completed.",
-          })}
+          {...register("username", { required: true })}
         />
-        {errors.username && (
-          <p className="error-message">{errors.username.message}</p>
-        )}
 
         <label className="sign-up-label-form" htmlFor="password">
           Password:
@@ -94,13 +97,8 @@ export default function SignUpForm({ onSuccess }) {
           type="password"
           id="password"
           placeholder="Password"
-          {...register("password", {
-            required: "All fields must be completed.",
-          })}
+          {...register("password", { required: true })}
         />
-        {errors.password && (
-          <p className="error-message">{errors.password.message}</p>
-        )}
 
         <label className="sign-up-label-form" htmlFor="startdate">
           Start Date:
@@ -108,7 +106,7 @@ export default function SignUpForm({ onSuccess }) {
         <Controller
           control={control}
           name="startDate"
-          rules={{ required: "All fields must be completed." }}
+          rules={{ required: true }}
           render={({ field }) => (
             <DatePicker
               placeholderText="dd/MM/yyyy"
@@ -120,10 +118,8 @@ export default function SignUpForm({ onSuccess }) {
             />
           )}
         />
-        {errors.startDate && (
-          <p className="error-message">{errors.startDate.message}</p>
-        )}
 
+        {/* Centralized error message display */}
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <Button text="Sign Up" className="button-center-bottom" />
