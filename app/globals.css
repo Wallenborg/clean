@@ -30,7 +30,6 @@ p {
 }
 
 .wrapper {
-  /* border: var(--clr-accent-2) solid 5px; */
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -68,4 +67,8 @@ p {
 
 .input-field:focus {
   border-color: var(--clr-accent-2);
+}
+
+.margin {
+  margin: 0 0 10vh 0;
 }

@@ -7,9 +7,8 @@ export default function CleanPage() {
   return (
     <ProtectedRoute>
       <UserProvider>
-        <div className="no-scroll">
+        <div className="no-scroll margin">
           <Header includeNav={true} />
-
           <DayCircle />
         </div>
       </UserProvider>

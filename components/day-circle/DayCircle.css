@@ -1,20 +1,9 @@
 .daycircle-container {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   position: absolute;
-  width: 100vw;
-  height: 100dvh;
-  /* margin: 0 0 10vh 0; */
-  overflow: hidden;
-}
-
-/* daycircle-container {
-  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-} */
+}
 
 .daycircle-container svg {
   position: absolute;
