@@ -13,7 +13,7 @@ export default function SignUpForm({ onSuccess }) {
     control,
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
   const [errorMessage, setErrorMessage] = useState(""); // Initialize state for error message
   const [loading, setLoading] = useState(false);

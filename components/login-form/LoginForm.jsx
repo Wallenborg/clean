@@ -10,7 +10,7 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState(""); // Initialize state for error message
